@@ -5,11 +5,9 @@ function onGeoSuccess(position) {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
-      const weatherContainer = document.querySelector(
-        "#weather span:first-child"
-      );
-      const cityContainer = document.querySelector("#weather span:last-child");
-      weatherContainer.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+      const weatherContainer = document.querySelector("#weather p:first-child");
+      const cityContainer = document.querySelector("#weather p:last-child");
+      weatherContainer.innerText = `${data.weather[0].main} / ${data.main.temp}℃`;
       cityContainer.innerText = `${data.name}`;
     });
 }
